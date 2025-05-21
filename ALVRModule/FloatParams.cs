@@ -46,6 +46,16 @@ namespace ALVRModule
         {
             set
             {
+                if (index >= UnifiedExpressions.EyeSquintRight && index <= UnifiedExpressions.NasalConstrictLeft && !TrackingSettings.EnableUpperFaceTracking)
+                {
+                    return;
+                }
+                
+                if (index >= UnifiedExpressions.CheekSquintRight && index <= UnifiedExpressions.NeckFlexLeft && !TrackingSettings.EnableLowerFaceTracking)
+                {
+                    return;
+                }
+
                 UnifiedTracking.Data.Shapes[Convert.ToInt32(index)].Weight = value;
             }
         }

@@ -17,6 +17,7 @@ namespace ALVRModule
         private readonly UdpClient Socket = new(Port);
         private readonly Dictionary<string, ParamsConsumer> Consumers = new()
         {
+            ["Settings"] = TrackingSettings.SetModuleSettings,
             ["EyesQuat"] = EyeTracking.SetEyesQuatParams,
             ["CombQuat"] = EyeTracking.SetCombEyesQuatParams,
             ["FaceFb\0\0"] = FbFaceTracking.SetFace1FbParams,
